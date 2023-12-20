@@ -34,7 +34,7 @@ public class HomeController extends HttpServlet {
             if (products != null) {
                 request.setAttribute("products", products);
                 request.setAttribute("size", size);
-                RequestDispatcher req = request.getRequestDispatcher("index1.html");
+                RequestDispatcher req = request.getRequestDispatcher("index2.html");
                 req.forward(request, response);
             }
         } catch (Exception e) {
