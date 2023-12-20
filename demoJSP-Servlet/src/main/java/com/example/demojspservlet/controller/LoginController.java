@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
         boolean isManager = false;
 
         if (username.equals(Manager.getManager().getUsername()) && password.equals(Manager.getManager().getPassword())) {
-            response.sendRedirect(request.getContextPath() + "/index.html");
+            response.sendRedirect(request.getContextPath() + "success-notification.html");
             isManager = true;
         }
 
@@ -42,9 +42,9 @@ public class LoginController extends HttpServlet {
                 user = loginService.login(username, password);
                 if (user != null) {
                     request.getSession().setAttribute("user", user);
-                    response.sendRedirect(request.getContextPath() + "/home");
-                    request.setAttribute("message", "Đăng nhập thành công!");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+                    // response.sendRedirect(request.getContextPath() + "/home");
+                    // request.setAttribute("message", "Đăng nhập thành công!");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("success-notification1.html");
                     dispatcher.forward(request, response);
                 } else {
                     request.setAttribute("message", "Đăng nhập thất bại!");
@@ -55,7 +55,7 @@ public class LoginController extends HttpServlet {
             }
         } catch (Exception e) {
             request.setAttribute("message", "Đăng nhập thất bại!");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("error-notification.html");
             dispatcher.forward(request, response);
         }
     }
