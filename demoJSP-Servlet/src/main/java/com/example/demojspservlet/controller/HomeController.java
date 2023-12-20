@@ -28,7 +28,6 @@ public class HomeController extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher req = request.getRequestDispatcher("index2.html");
         req.forward(request, response);
-
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
