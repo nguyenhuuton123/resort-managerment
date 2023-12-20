@@ -7,11 +7,11 @@ import java.util.List;
 public interface IEmployeeService {
     List<Employee> findAll();
 
-    Employee findByName();
+    Employee findbyId(int id);
 
-    boolean addEmployeeInformation();
+    boolean addEmployeeInformation(Employee employee);
 
-    boolean editEmployeeInformation();
+    boolean editEmployeeInformation(int id, Employee employee);
 
-    boolean removeEmployeeInformation();
+    boolean removeEmployeeInformation(int id);
 }
