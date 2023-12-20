@@ -6,10 +6,12 @@ import com.example.demojspservlet.entity.Products;
 import com.example.demojspservlet.service.HomeService;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
@@ -23,23 +25,9 @@ public class HomeController extends HttpServlet {
         homeService = new HomeService();
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        List<Products> products;
-        List<CartItems> cartItems;
-        int size;
-        try {
-            products = homeService.getProductList();
-            cartItems = homeService.getCartLineList();
-            size = cartItems.size();
-            if (products != null) {
-                request.setAttribute("products", products);
-                request.setAttribute("size", size);
-                RequestDispatcher req = request.getRequestDispatcher("index2.html");
-                req.forward(request, response);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher req = request.getRequestDispatcher("index2.html");
+        req.forward(request, response);
 
     }
 
