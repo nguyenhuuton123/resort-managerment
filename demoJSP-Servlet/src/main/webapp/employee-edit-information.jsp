@@ -88,8 +88,8 @@
     <label for="divisionId">Division ID:</label>
     <input type="text" id="divisionId" name="divisionId" required>
 
-    <label for="username">User Name:</label>
-    <input type="text" id="username" name="username" required>
+    <label for="user_id">User Name:</label>
+    <input type="text" id="user_id" name="username" value="${username}">
 
     <button type="submit">Register</button>
 </form>

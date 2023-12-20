@@ -2,6 +2,7 @@ package com.example.demojspservlet.controller;
 
 import com.example.demojspservlet.entity.Manager;
 import com.example.demojspservlet.entity.User;
+import com.example.demojspservlet.repository.LoginRepository;
 import com.example.demojspservlet.service.LoginService;
 
 import javax.servlet.RequestDispatcher;
@@ -16,6 +17,7 @@ import java.io.IOException;
 public class LoginController extends HttpServlet {
 
     private final LoginService loginService;
+    private final LoginRepository loginRepository = new LoginRepository();
 
     public LoginController() {
         loginService = new LoginService();
@@ -27,11 +29,11 @@ public class LoginController extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        String username = request.getParameter("username");
+        String usernameLogin = request.getParameter("username");
         String password = request.getParameter("password");
         boolean isManager = false;
 
-        if (username.equals(Manager.getManager().getUsername()) && password.equals(Manager.getManager().getPassword())) {
+        if (usernameLogin.equals(Manager.getManager().getUsername()) && password.equals(Manager.getManager().getPassword())) {
             response.sendRedirect(request.getContextPath() + "success-notification.html");
             isManager = true;
         }
@@ -39,8 +41,10 @@ public class LoginController extends HttpServlet {
         User user;
         try {
             if (!isManager) {
-                user = loginService.login(username, password);
+                user = loginService.login(usernameLogin, password);
+                int idEmployee = loginRepository.getIdEmployee(usernameLogin);
                 if (user != null) {
+                    request.getSession().setAttribute("usernameLogin", idEmployee);
                     request.getSession().setAttribute("user", user);
                     // response.sendRedirect(request.getContextPath() + "/home");
                     // request.setAttribute("message", "Đăng nhập thành công!");

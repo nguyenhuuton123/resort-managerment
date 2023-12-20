@@ -1,7 +1,6 @@
 package com.example.demojspservlet.controller;
 
 import com.example.demojspservlet.repository.UserRepository;
-import com.example.demojspservlet.service.UserService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,12 +11,10 @@ import java.io.IOException;
 @WebServlet(name = "createUserServlet", value = "/create-user")
 public class CreateUserController extends HttpServlet {
 
-    private final UserService userService;
+
     private final UserRepository userRepository = new UserRepository();
 
-    public CreateUserController() {
-        userService = new UserService();
-    }
+
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.sendRedirect(request.getContextPath() + "/insert.jsp");
@@ -33,7 +30,9 @@ public class CreateUserController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         userRepository.insertUsername(username,password);
-        response.sendRedirect(request.getContextPath() + "/home");
+        request.getSession().setAttribute("username", username);
+        response.sendRedirect(request.getContextPath() + "/employee-register");
+        System.out.println(username);
 
 //        boolean isSuccessful;
 //        try {

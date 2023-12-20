@@ -47,7 +47,7 @@
 </div>
 <h2>home page</h2>
 <form action="/home" method="post">
-     <input type="hidden" name="user_id" value="${user.id}">
+     <input type="text" name="user_id" value="${user.id}">
      <c:forEach items="${products}" var="item">
           <tr>
                <input type="radio" name="product_id" value="${item.ID}">${item.ID}
