@@ -1,1 +1,2 @@
-# resort_managerment
+# project: resort_managerment
+# team member
