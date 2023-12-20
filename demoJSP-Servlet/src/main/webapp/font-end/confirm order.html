@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang xác nhận đặt phòng và thanh toán</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #007bff;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    .confirm-section, .payment-section {
+      margin: 0 auto;
+      width: 50%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    li span {
+      font-weight: bold;
+      color: #007bff;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input[type="text"] {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+    }
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .continue-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .continue-section a {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    footer {
+      background-color: #007bff;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Xác nhận đặt phòng và thanh toán</h1>
+  </header>
+  <main>
+    <section class="confirm-section">
+      <h2>Thông tin đặt phòng</h2>
+      <form action="/payment" method="post">
+      <ul>
+        <li>Tên phòng: <span></span></li>
+        <li>Ngày bắt đầu: <span><input type="hidden" name="arrival" value="${sessionScope.arrivalDate}"></span></li>
+        <li>Ngày kết thúc: <span><input type="hidden" name="departure" value="${sessionScope.departureDate}"></span></li>
+<!--        <li>Giá phòng: <span><input type="hidden" name="employee_id" value="${sessionScope.arrivalDate}">1.000.000đ/đêm</span></li>-->
+<!--        <li>Tổng số tiền: <span>2.000.000đ</span></li>-->
+      </ul>
+    </section>
+    <section class="payment-section">
+      <h2>Thông tin thanh toán</h2>
+
+        <input type="text" name="name" placeholder="Tên" />
+        <input type="text" name="email" placeholder="Email" />
+        <input type="text" name="phone" placeholder="Số điện thoại" />
+        <input type="text" name="address" placeholder="Địa chỉ" />
+        <input type="text" name="deposit" placeholder="deposit" />
+        <input type="submit" value="Thanh toán" />
+      </form>
+    </section>
+    <section class="continue-section">
+      <a href="#">Tiếp tục thanh toán</a>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright © 2023</p>
+  </footer>
+</body>
+</html>
