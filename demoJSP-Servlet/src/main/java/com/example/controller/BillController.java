@@ -1,9 +1,9 @@
 package com.example.controller;
 
-import com.entity.Order;
-import com.entity.OrderLine;
-import com.example.repository.repository.HomeRepository;
-import com.example.service.HomeService;
+import com.example.model.entity.Order;
+import com.example.model.entity.OrderLine;
+import com.example.model.repository.HomeRepository;
+import com.example.model.service.HomeService;
 
 
 import javax.servlet.RequestDispatcher;

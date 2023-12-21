@@ -1,8 +1,8 @@
 package com.example.controller;
 
-import com.entity.Employee;
-import com.example.service.EmployeeService;
-import com.example.service.IEmployeeService;
+import com.example.model.entity.Employee;
+import com.example.model.service.EmployeeService;
+import com.example.model.service.IEmployeeService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
