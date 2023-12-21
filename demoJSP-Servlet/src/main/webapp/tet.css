@@ -10,14 +10,16 @@ body {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   text-align: center;
+  background-image: url("4882066.jpg");
+  background-size:cover;
 }
 
 #container {
   position: relative;
   margin: auto;
   overflow: hidden;
-  width: 700px;
-  height: 250px;
+  width: 1500px;
+  height: 500px;
 }
 
 h1 {

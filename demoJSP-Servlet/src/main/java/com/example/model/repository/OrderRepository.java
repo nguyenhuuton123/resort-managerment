@@ -1,7 +1,8 @@
 package com.example.model.repository;
 
+
+
 import com.example.model.entity.Contract;
-import com.example.model.repository.ConnectionConfig;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -52,14 +52,14 @@ public class LoginController extends HttpServlet {
                     dispatcher.forward(request, response);
                 } else {
                     request.setAttribute("message", "Đăng nhập thất bại!");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("error-notification1.html");
                     dispatcher.forward(request, response);
                 }
 
             }
         } catch (Exception e) {
             request.setAttribute("message", "Đăng nhập thất bại!");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("error-notification.html");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("error-notification1.html");
             dispatcher.forward(request, response);
         }
     }
