@@ -1,8 +1,8 @@
 package com.example.controller;
 
-import com.entity.CartItems;
-import com.example.repository.repository.HomeRepository;
-import com.example.service.HomeService;
+import com.example.model.entity.CartItems;
+import com.example.model.repository.HomeRepository;
+import com.example.model.service.HomeService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;

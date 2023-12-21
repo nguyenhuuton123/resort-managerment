@@ -1,7 +1,7 @@
 package com.example.controller;
-import com.entity.Contract;
-import com.example.repository.repository.OrderRepository;
-import com.example.service.OrderService;
+import com.example.model.entity.Contract;
+import com.example.model.repository.OrderRepository;
+import com.example.model.service.OrderService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

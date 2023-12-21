@@ -1,5 +1,5 @@
 package com.example.controller;
-import com.example.repository.repository.UserRepository;
+import com.example.model.repository.UserRepository;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

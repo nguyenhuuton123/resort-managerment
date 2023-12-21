@@ -1,7 +1,7 @@
 package com.example.controller;
 
-import com.entity.User;
-import com.example.service.UserService;
+import com.example.model.entity.User;
+import com.example.model.service.UserService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

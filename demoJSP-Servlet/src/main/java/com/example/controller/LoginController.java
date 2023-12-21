@@ -1,9 +1,9 @@
 package com.example.controller;
 
-import com.entity.User;
-import com.entity.Manager;
-import com.example.repository.repository.LoginRepository;
-import com.example.service.LoginService;
+import com.example.model.entity.User;
+import com.example.model.entity.Manager;
+import com.example.model.repository.LoginRepository;
+import com.example.model.service.LoginService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
