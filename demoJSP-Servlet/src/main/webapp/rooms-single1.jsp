@@ -81,7 +81,7 @@
           			</div>
           		</div>
           		<div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
-          			<h2 class="mb-4">Suite Room <span>- (4 Available rooms)</span></h2>
+          			<h2 class="mb-4">King Room <span>- (4 Available rooms)</span></h2>
     						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
     						<div class="d-md-flex mt-5 mb-5">
     							<ul class="list">
@@ -222,53 +222,31 @@
               <h3>Paragraph</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
             </div>
-            <div class="part2" id="part2">
-              <h3>Your Reservation</h3>
-              <div class="form">
-                  <div class="input date">
-                      <i class="fa fa-calendar" aria-hidden="true"></i>
-                      <input type="date" id="arrival" required placeholder="ARRIVAL DATE"
-                          onfocus="(this.type='date')">
-                  </div>
+              <div class="part2" id="part2">
+                  <form action="/reservation" method="post">
+                      <input type="text" name="phone_number" placeholder="phone_number">
+                      <input type="text" name="deposit" placeholder="deposit">
+                      <input type="text" name="employee_id" value="${usernameLogin}">
+                      <input type="text" name="facility_id" value="5">
+                      <h3>Your Reservation</h3>
+                      <div class="form">
+                          <div class="input date">
+                              <i class="fa fa-calendar" aria-hidden="true"></i>
+                              <input type="date" id="arrival" name="arrival" required placeholder="ARRIVAL DATE"
+                                     onfocus="(this.type='date')">
+                          </div>
 
+                          <div class="input date">
+                              <i class="fa fa-calendar" aria-hidden="true"></i>
+                              <input type="date" id="departure" name="departure" required placeholder="DEPARTURE DATE"
+                                     onfocus="(this.type='date')">
+                          </div>
 
-                  <div class="input date">
-                      <i class="fa fa-calendar" aria-hidden="true"></i>
-                      <input type="date" id="departure" required placeholder="DEPARTURE DATE"
-                          onfocus="(this.type='date')">
-                  </div>
-
-
-                  <div class="input">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      <select id="adults" required>
-                          <option selected>Adults</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                      </select>
-                  </div>
-
-
-                  <div class="input">
-                      <i class="fa fa-child" aria-hidden="true"></i>
-                      <select id="children" required>
-                          <option selected>Children</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                      </select>
-                  </div>
-
-                  <button><a><i class="fa fa-calendar-minus-o" aria-hidden="true"></i>CHECK
-                          AVAILABILITY</a></button>
+                          <button type = "submit" value = "Submit"><a><i class="fa fa-calendar-minus-o" aria-hidden="true"></i>Confirm
+                              reservation</a></button>
+                      </div>
+                  </form>
               </div>
-          </div>
           </div>
         </div>
       </div>

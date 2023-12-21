@@ -17,7 +17,7 @@ public class EmployeeConfig implements IEmployeeDao{
     private final String SELECT_ALL = "SELECT * FROM employee";
     private final String SELECT_BY_ID = "SELECT * FROM employee WHERE id = ?";
     private final String ADD_EMPLOYEE_INFORMATION = "INSERT INTO employee(name,date_of_birth,id_card,salary,phone_number," +
-            "email,address,position_id,education_degree_id,division_id,user_name) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            "email,address,position_id,education_degree_id,division_id,username) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     private final String EDIT_EMPLOYEE_INFORMATION = "UPDATE employee SET name = ?, date_of_birth = ?, id_card = ?, salary = ?," +
             " phone_number = ?, email = ?, address = ?, position_id = ?, education_degree_id = ?, division_id = ? username = ?" +
             " WHERE id = ?";
@@ -114,7 +114,7 @@ public class EmployeeConfig implements IEmployeeDao{
     public boolean addEmployeeInformation(Employee employee) {
         try {
             connection = ConnectionConfig.getConnection();
-            preparedStatement = connection.prepareStatement(EDIT_EMPLOYEE_INFORMATION);
+            preparedStatement = connection.prepareStatement(ADD_EMPLOYEE_INFORMATION);
             preparedStatement.setString(1,employee.getName());
             preparedStatement.setString(2, employee.getDateOfBirth());
             preparedStatement.setString(3, employee.getIdCard());

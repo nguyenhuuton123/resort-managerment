@@ -14,12 +14,12 @@ public class ReservationServlet extends HttpServlet {
     OrderRepository orderRepository = new OrderRepository();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String customerPhone = request.getParameter("phone_number");
-        long employeeId = Long.parseLong(request.getParameter("employee_id"));
+        int employeeId = Integer.parseInt((request.getParameter("employee_id")));
         String arrivalDate = request.getParameter("arrival");
         String departureDate = request.getParameter("departure");
         double deposit = Double.parseDouble(request.getParameter("deposit"));
         int facility_id = Integer.parseInt(request.getParameter("facility_id"));
         orderRepository.insertOrder(customerPhone,employeeId,arrivalDate,departureDate,deposit,facility_id);
-        response.sendRedirect("confirmation.jsp");
+        response.sendRedirect("confirmation.html");
     }
 }
