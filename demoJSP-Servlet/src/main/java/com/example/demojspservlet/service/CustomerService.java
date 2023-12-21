@@ -1,8 +1,8 @@
 package com.example.demojspservlet.service;
 
-import com.example.demojspservlet.entity.Customer;
-import com.example.demojspservlet.repository.ICustomerDao;
-import com.example.demojspservlet.repository.impl.CustomerDao;
+import com.example.entity.Customer;
+import com.example.repository.ICustomerDao;
+import com.example.repository.impl.CustomerDao;
 
 import java.util.List;
 
