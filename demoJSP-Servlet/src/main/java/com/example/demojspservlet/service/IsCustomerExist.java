@@ -1,6 +1,6 @@
 package com.example.demojspservlet.service;
 
-import com.example.demojspservlet.entity.Customer;
+import com.example.entity.Customer;
 
 import java.util.List;
 
