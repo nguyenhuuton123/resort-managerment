@@ -226,8 +226,8 @@
                   <form action="/reservation" method="post">
                       <input type="text" name="phone_number" placeholder="phone_number">
                       <input type="text" name="deposit" placeholder="deposit">
-                      <input type="text" name="employee_id" value="${usernameLogin}">
-                      <input type="text" name="facility_id" value="4">
+                      <input type="hidden" name="employee_id" value="${usernameLogin}">
+                      <input type="hidden" name="facility_id" value="4">
                   <h3>Your Reservation</h3>
                   <div class="form">
                       <div class="input date">
