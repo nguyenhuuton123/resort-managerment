@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Registration</title>
     <style>
+        html{
+            background-image: url("4882066.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
