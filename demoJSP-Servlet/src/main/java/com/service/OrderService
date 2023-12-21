@@ -1,0 +1,44 @@
+public static void ghiAttendanceListVaoFile(List<Employee> attendance) {
+        try {
+            // Mở file Excel hiện có
+            File inp = new File("attendance.xls");
+            Workbook existingWorkbook = Workbook.getWorkbook(inp);
+
+            // Tạo một bản sao có thể ghi được từ Workbook hiện có
+            File out = new File("attendance.xls");
+            WritableWorkbook workbook = Workbook.createWorkbook(out, existingWorkbook);
+
+            // Lấy sheet đầu tiên
+            WritableSheet sheet = workbook.getSheet(0);
+
+            // Ghi dữ liệu
+            for (int i = 0; i < attendance.size(); i++) {
+                Employee employee = attendance.get(i);
+                Label name = new Label(0, i + 1, employee.getName());
+                Label checkIn = new Label(1, i + 1, String.valueOf(employee.getCheckInTime()));
+                Label checkOut = new Label(2, i + 1, String.valueOf(employee.getCheckOutTime()));
+                sheet.addCell(name);
+                sheet.addCell(checkIn);
+                sheet.addCell(checkOut);
+            }
+
+            // Đóng Workbook hiện có trước khi ghi bản sao
+            existingWorkbook.close();
+
+            // Ghi workbook vào file và đóng nó
+            workbook.write();
+            workbook.close();
+        } catch (Exception e) {
+            System.out.println("bug");
+        }
+        FileWriter writer;
+        try {
+            writer = new FileWriter("attendance.txt");
+            for (Employee user : attendance) {
+                writer.write(user.toString() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("bug");
+        }
+    }
